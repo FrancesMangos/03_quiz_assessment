@@ -1,13 +1,16 @@
 import time
+def countdown(t):
+    while t>0:
+        print(t)
+        t = t - 2
+        time.sleep(2)
+    print("Time's Up!")
 
-# timer counts down in ones
-
-# ask user how many seconds the program should count down from
-seconds = int(input("How many seconds do you want to count down from"))
-
-# loop that counts backwards
-for i in range(seconds):
-    print(str(seconds - i) + " seconds remain")
-    time.sleep(1)
-
+print("How many seconds to count down?")
+seconds = input()
+while not seconds.isdigit():
+    print ("That wasn't an integer!")
+    seconds = input()
+seconds = int(seconds)
+countdown(seconds)
 
