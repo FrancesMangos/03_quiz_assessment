@@ -6,20 +6,12 @@ def yes_no(question):
                          "the game before?").lower()
 
 
-        if response == "yes":
-            response = "yes"
-            return response
-
-        elif response == "y":
+        if response == "yes" or response == "y":
             response = "yes"
             return response
 
         # If input no, ask if user wants to see instructions
-        elif response == "no":
-            response = "no"
-            return response
-
-        elif response == "n":
+        elif response == "no" or response == "n":
             response = "no"
             return response
 
@@ -33,20 +25,12 @@ def want_instructions(question):
         response = input("Do you want to see"
                          " the instructions?").lower()
 
-        if response == "yes":
+        if response == "yes" or response == "y":
             response = "yes"
             return response
 
-        elif response == "y":
-            response = "yes"
-            return response
-
-        # If input no, ask if user wants to see instructions
-        elif response == "no":
-            response = "no"
-            return response
-
-        elif response == "n":
+        # If input no, display instructions
+        elif response == "no" or response == "n":
             response = "no"
             return response
 

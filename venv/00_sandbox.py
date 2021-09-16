@@ -2,8 +2,8 @@ import time
 def countdown(t):
     while t>0:
         print(t)
-        t = t - 2
-        time.sleep(2)
+        t = t - 5
+        time.sleep(5)
     print("Time's Up!")
 
 print("How many seconds to count down?")
@@ -13,4 +13,6 @@ while not seconds.isdigit():
     seconds = input()
 seconds = int(seconds)
 countdown(seconds)
+
+
 

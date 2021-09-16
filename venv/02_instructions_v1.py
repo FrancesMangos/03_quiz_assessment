@@ -6,20 +6,12 @@ def yes_no(question):
                          "the game before?").lower()
 
 
-        if response == "yes":
+        if response == "yes" or response == "y":
             response = "yes"
             return response
 
-        elif response == "y":
-            response = "yes"
-            return response
-
-        # If input no, ask if user wants to see instructions
-        elif response == "no":
-            response = "no"
-            return response
-
-        elif response == "n":
+        # If input no, display instructions
+        elif response == "no" or response == "n":
             response = "no"
             return response
 
@@ -30,29 +22,24 @@ def yes_no(question):
 def want_instructions(question):
     valid = False
     while not valid:
-        response = input("Do you want to see"
-                         " the instructions?").lower()
+        response = input("Do you want to see the instructions?").lower()
 
-        if response == "yes":
+        if response == "yes" or response == "y":
             response = "yes"
             return response
 
-        elif response == "y":
-            response = "yes"
-            return response
-
-        # If input no, ask if user wants to see instructions
-        elif response == "no":
-            response = "no"
-            return response
-
-        elif response == "n":
+        # If input no, display instructions
+        elif response == "no" or response == "n":
             response = "no"
             return response
 
         #If input not yes or no, clarify question
         else:
             print("<error> please insert a yes / no")
+
+def instructions_and_rules():
+    print("These are the instructions to the game:")
+    print("You will have two minutes to answer as many questions as you can")
 
 # main program goes here
 print("Welcome to the Timer Quiz Game :]")
@@ -62,7 +49,7 @@ if played_before == "no":
     if instructions == "no":
         print()
     elif instructions == "yes":
-        print("display instructions")
+        instructions_and_rules()
     else:
         print()
 else:
