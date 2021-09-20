@@ -39,7 +39,20 @@ def want_instructions(question):
 
 def instructions_and_rules():
     print("These are the instructions to the game:")
+    print()
     print("You will have two minutes to answer as many questions as you can")
+    print("There will only be single answer questions")
+    print()
+    print("If you get an answer wrong it will move onto the next question"
+          ", every wrong answer will be deducted from your final score")
+    print("If you get an answer correct you will get one point")
+    print()
+    print("Once the time is up your score will be displayed, including:")
+    print("Overall Score")
+    print("Amount of questions answered correctly")
+    print("Amount of questions answered incorrectly")
+    print()
+
 
 # main program goes here
 print("Welcome to the Timer Quiz Game :]")
