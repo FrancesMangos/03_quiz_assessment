@@ -5,18 +5,18 @@ correct_answers = 0
 answer_one = 'blue whale'
 answer_two = "mercury"
 answer_three = "netflix"
+answer_four = "china"
 
 while True:
     answer = input("What is the biggest animal that has ever lived?")
     answer = answer.lower()
     if answer == answer_one:
-        print ("CORRECT!")
+        print("CORRECT!")
         correct_answers += 1
         break
     else:
-        print ("INCORRECT. TRY AGAIN")
+        print("INCORRECT. TRY AGAIN")
         incorrect_answers += 1
-
 while True:
     answer = input("What is the smallest planet in our solar system?")
     answer = answer.lower()
@@ -25,9 +25,8 @@ while True:
         correct_answers += 1
         break
     else:
-        print ("INCORRECT. TRY AGAIN")
+        print("INCORRECT. TRY AGAIN")
         incorrect_answers += 1
-
 while True:
     answer = input("What is the most popular streaming service?")
     answer = answer.lower()
@@ -36,8 +35,17 @@ while True:
         correct_answers += 1
         break
     else:
-        print ("INCORRECT. TRY AGAIN")
+        print("INCORRECT. TRY AGAIN")
+        incorrect_answers += 1
+while True:
+    answer = input("Which country has the highest population?")
+    answer = answer.lower()
+    if answer == answer_four:
+        print("CORRECT!")
+        correct_answers += 1
+        break
+    else:
+        print("INCORRECT. TRY AGAIN")
         incorrect_answers += 1
 
 print("You got {} correct answers, and {} incorrect guesses.".format(correct_answers, incorrect_answers))
-
