@@ -1,4 +1,3 @@
-score = 0
 incorrect_answers = 0
 correct_answers = 0
 
@@ -48,4 +47,5 @@ while True:
         print("INCORRECT. TRY AGAIN")
         incorrect_answers += 1
 
+print()
 print("You got {} correct answers, and {} incorrect guesses.".format(correct_answers, incorrect_answers))
