@@ -40,18 +40,25 @@ def want_instructions(question):
 def instructions_and_rules():
     print("These are the instructions to the game:")
     print()
-    print("You will have two minutes to answer as many questions as you can")
-    print("There will only be single answer questions")
+    print("You will have 60 seconds to answer as many questions as you can")
+    print("When a question is displayed, three options will be provided")
+    print("You must type the answer you are wanting to submit, not the letter assigned to it")
     print()
-    print("If you get an answer wrong it will move onto the next question"
-          ", every wrong answer will be deducted from your final score")
-    print("If you get an answer correct you will get one point")
+    print("At the beginning of the game you will have three lives")
+    print("If you get an answer correct you will get 10 points, and move on to the next question")
+    print("If you get an answer wrong it will move on to the next question.")
+    print("However you will only get 5 points and 1 life will be deducted.")
     print()
-    print("Once the time is up your score will be displayed, including:")
-    print("Overall Score")
+    print("One of three endgame situations will print the following:")
+    print("Total Score")
     print("Amount of questions answered correctly")
-    print("Amount of questions answered incorrectly")
     print()
+    print("The endgame situations being:")
+    print("You lose if the timer reaches 0 and you have not answered all the questions.")
+    print("You lose if you have 0 lives.")
+    print("You win if you answer all the questions with 1 or more lives remaining")
+    print()
+    print("May be subject to a randomized question quiz - who knows?¯\_(ツ)_/¯")
 
 
 # main program goes here
