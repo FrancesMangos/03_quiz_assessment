@@ -1,3 +1,4 @@
+import random
 play_game = True
 
 test_list = [["What is the most used streaming service?", "netflix", "disney+", "hulu"],
@@ -8,6 +9,9 @@ test_list = [["What is the most used streaming service?", "netflix", "disney+", 
 correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
 
 question = 1
+
+
+random.shuffle(test_list)
 
 while play_game == True:
     print("Question {}".format(question))
