@@ -12,9 +12,9 @@ question = 1
 while play_game == True:
     print("Question {}".format(question))
     print(test_list[0][0])
-    print("A. {}".format(test_list[0][1]))
-    print("B. {}".format(test_list[0][2]))
-    print("C. {}".format(test_list[0][3]))
+    print("a. {}".format(test_list[0][1]))
+    print("b. {}".format(test_list[0][2]))
+    print("c. {}".format(test_list[0][3]))
     guess = input("What is your answer?")
     if guess in correct_answers:
         print("CORRECT!")
