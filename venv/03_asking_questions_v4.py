@@ -10,7 +10,6 @@ correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
 
 question = 1
 
-
 random.shuffle(test_list)
 
 while play_game == True:
