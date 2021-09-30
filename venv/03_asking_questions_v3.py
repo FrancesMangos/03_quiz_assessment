@@ -9,8 +9,6 @@ correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
 
 question = 1
 
-lives = 3
-
 while play_game == True:
     print("Question {}".format(question))
     print(test_list[0][0])
@@ -21,13 +19,13 @@ while play_game == True:
     if guess in correct_answers:
         print("CORRECT!")
     else:
-        print("INCORRECT. ")
-        lives -= 1
+        print("INCORRECT. :(")
     del test_list[0]
     question += 1
     print()
-    if lives == 0:
-        play_game = False
+
+play_game = False
 
 if play_game == False:
-    print("All Lives Lost. Game Over")
+    print("Game Over")
+
