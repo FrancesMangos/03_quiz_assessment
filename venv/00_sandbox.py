@@ -44,7 +44,7 @@ def want_instructions(question):
 
 
 def instructions_and_rules():
-    print("These are the instructions to the game:")
+    statement_generator("These are the instructions to the game:", "-")
     print()
     print("You will have 60 seconds to answer as many questions as you can")
     print("When a question is displayed, three options will be provided")
@@ -55,25 +55,26 @@ def instructions_and_rules():
     print("If you get an answer wrong it will move on to the next question.")
     print("However you will only get 5 points and 1 life will be deducted.")
     print()
-    print("One of three endgame situations will print the following:")
+    print("At the end of the game these will be displayed:")
     print("Total Score")
     print("Amount of questions answered correctly")
     print()
-    print("The endgame situations being:")
+    print("Three different endings will occur depending on your performance")
     print("You lose if the timer reaches 0 and you have not answered all the questions.")
     print("You lose if you have 0 lives.")
-    print("You win if you answer all the questions with 1 or more lives remaining")
+    print("You win if you answer all the questions available with 1 or more lives remaining")
     print()
-    print("May be subject to a randomized question quiz - who knows?¯\_(ツ)_/¯")
-    print("(Update) I made it randomized >:D")
+    print("SIDE NOTE: Do not move where you are supposed to type")
+    print(" This will make it easier to know when time is up because the program will automatically drop it to the next line")
+    print()
 
 
 def countdown():
     global my_timer
 
-    my_timer = 10
+    my_timer = 20
 
-    for x in range(10):
+    for x in range(20):
         my_timer = my_timer - 1
         sleep(1)
 
@@ -98,18 +99,25 @@ def statement_generator(statement, decoration):
 # main program goes here
 test_list = [["What is the most used streaming service?", "netflix", "disney+", "hulu"],
              ["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
-             ["In which country did Lego originate from?", "denmark", "germany", "england"],
-             ["What chases the player's character in Pacman?", "ghosts", "goblins", "inner demons and self doubt"]]
+             ["In which country did Lego originate from?", "germany", "denmark", "england"],
+             ["What chases the player's character in the game Pacman?", "ghosts", "goblins", "inner demons and self doubt"],
+             ["Hákarl is the Icelandic delicacy of what fermented meat?", "shark", "dolphin", "whale"],
+             ["What is a female giraffe called?", "giraffe", "cow", "doe"],
+             ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
+             ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
+             ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
+             ["Which word did did this question repeat?", "repeat", "word", "did"],
+             ["Which one of these is one of the seven natural Wonders of the World?", "paricutin", "great wall of china", ""]]
 
-correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
-
+correct_answers = ["netflix", "mercury", "denmark", "ghosts", "shark", "cow", "eyes", "arachnids", "green"]
 question = 1
 score = 0
 lives = 3
 questions_answered = 0
 
 # welcome the user to the game, ask them if they have played before
-print("Welcome to the Timer Quiz Game :]")
+statement_generator("Welcome to the Timer Quiz Game", "*")
+print()
 played_before = yes_no("Have you played before?")
 print()
 
@@ -124,6 +132,7 @@ if played_before == "no":
         print()
 else:
     print()
+
 play_game = input("Press <Enter> to play")
 print()
 print("=====================================")
@@ -140,30 +149,29 @@ while my_timer > 0 and play_game == "" and len(test_list) != 0:
     print("C. {}".format(test_list[0][3]))
     guess = input("What is your answer?")
     if guess in correct_answers:
-        print("CORRECT!")
+        statement_generator("CORRECT!", "-")
         score += 10
-        questions_answered + 1
+        questions_answered += 1
     else:
-        print("INCORRECT!")
+        statement_generator("INCORRECT!", "-")
         lives -= 1
         score += 5
     del test_list[0]
     question += 1
-    print()
+    print("=====================================")
 
 if lives == 0:
-    play_game = False
     print("All Lives Lost. Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
 elif my_timer == 0:
-    print("Time's Up!. Game Over")
+    print("Time's Up! Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
 else:
-    print("Game Over")
+    print("Game Over!")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
