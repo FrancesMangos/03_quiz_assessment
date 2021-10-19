@@ -109,12 +109,14 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
              ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan"],
              ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
-             ["The Resident Evil game franchise has how many games?", "28", "14", "7"]]
+             ["The Resident Evil game franchise has how many games?", "28", "14", "7"],
+             ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
+             ["Eden Nash won 75,000 pounds in the British show 'The Chase' against which Chaser?", "governess", "menace", "sinnerman"]]
 
-correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28" ]
+correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28", "adverb", "menace"]
 question = 1
 score = 0
-lives_taken = 0
+lives = 3
 questions_answered = 0
 
 # welcome the user to the game, ask them if they have played before
@@ -146,23 +148,27 @@ countdown_thread.start()
 while my_timer > 0 and play_game == "" and len(test_list) != 0:
     print("Question {}".format(question))
     print(test_list[0][0])
+    sleep(0.5)
     print("A. {}".format(test_list[0][1]))
+    sleep(0.5)
     print("B. {}".format(test_list[0][2]))
+    sleep(0.5)
     print("C. {}".format(test_list[0][3]))
+    sleep(0.5)
     guess = input("What is your answer?")
     if guess in correct_answers:
         statement_generator("CORRECT!", "-")
         score += 10
         questions_answered += 1
     else:
-        lives_taken += 1
         statement_generator("INCORRECT!", "-")
+        lives -= 1
         score += 5
     del test_list[0]
     question += 1
     print("=====================================")
 
-if lives_taken == 3:
+if lives == 0:
     print("All Lives Lost. Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
