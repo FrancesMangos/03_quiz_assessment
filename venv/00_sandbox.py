@@ -97,22 +97,24 @@ def statement_generator(statement, decoration):
 
 
 # main program goes here
-test_list = [["What is the most used streaming service?", "netflix", "disney+", "hulu"],
-             ["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
+test_list = [["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
              ["In which country did Lego originate from?", "germany", "denmark", "england"],
              ["What chases the player's character in the game Pacman?", "ghosts", "goblins", "inner demons and self doubt"],
-             ["Hákarl is the Icelandic delicacy of what fermented meat?", "shark", "dolphin", "whale"],
+             ["Hákarl is the Icelandic delicacy of which fermented meat?", "shark", "dolphin", "whale"],
              ["What is a female giraffe called?", "giraffe", "cow", "doe"],
              ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
+             ["In what year was Marvel's The Avengers released?", "2011", "2013", "2012"],
              ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
              ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
-             ["Which word did did this question repeat?", "repeat", "word", "did"],
-             ["Which one of these is one of the seven natural Wonders of the World?", "paricutin", "great wall of china", ""]]
+             ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
+             ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan"],
+             ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
+             ["The Resident Evil game franchise has how many games?", "28", "14", "7"]]
 
-correct_answers = ["netflix", "mercury", "denmark", "ghosts", "shark", "cow", "eyes", "arachnids", "green"]
+correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28" ]
 question = 1
 score = 0
-lives = 3
+lives_taken = 0
 questions_answered = 0
 
 # welcome the user to the game, ask them if they have played before
@@ -153,14 +155,14 @@ while my_timer > 0 and play_game == "" and len(test_list) != 0:
         score += 10
         questions_answered += 1
     else:
+        lives_taken += 1
         statement_generator("INCORRECT!", "-")
-        lives -= 1
         score += 5
     del test_list[0]
     question += 1
     print("=====================================")
 
-if lives == 0:
+if lives_taken == 3:
     print("All Lives Lost. Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
