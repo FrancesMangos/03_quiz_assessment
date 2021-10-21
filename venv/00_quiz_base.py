@@ -1,7 +1,11 @@
-# functions go here
+# imports go here
+
 from time import *
 import threading
 import random
+
+# functions go here
+
 
 def yes_no(question):
     valid = False
@@ -72,9 +76,9 @@ def instructions_and_rules():
 def countdown():
     global my_timer
 
-    my_timer = 20
+    my_timer = 60
 
-    for x in range(20):
+    for x in range(60):
         my_timer = my_timer - 1
         sleep(1)
 
@@ -103,22 +107,30 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["Hákarl is the Icelandic delicacy of which fermented meat?", "shark", "dolphin", "whale"],
              ["What is a female giraffe called?", "giraffe", "cow", "doe"],
              ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
-             ["In what year was Marvel's The Avengers released?", "2011", "2013", "2012"],
+             ["In what year was Marvel's The Avengers released?", "2010", "2011", "2012"],
              ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
              ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
              ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
              ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan"],
              ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
-             ["The Resident Evil game franchise has how many games?", "28", "14", "7"]]
+             ["The Resident Evil game franchise has how many games?", "28", "14", "7"],
+             ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
+             ["A leech has how many brains?", "32", "42", "52"],
+             ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
+             ["What does the B stand for in FBI?", "bureau", "business", "bigot"],
+             ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice"]
+]
 
-correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28" ]
+correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids"
+    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice"]
+
 question = 1
 score = 0
-lives_taken = 0
+lives = 3
 questions_answered = 0
 
 # welcome the user to the game, ask them if they have played before
-statement_generator("Welcome to the Timer Quiz Game", "*")
+statement_generator("Welcome to the Quiz Blitz!", "*")
 print()
 played_before = yes_no("Have you played before?")
 print()
@@ -135,46 +147,60 @@ if played_before == "no":
 else:
     print()
 
+# ask the user to start the game
 play_game = input("Press <Enter> to play")
 print()
 print("=====================================")
 
+# starts the timer and shuffles the questions list to be different each run
 random.shuffle(test_list)
 countdown_thread = threading.Thread(target = countdown)
 countdown_thread.start()
 
-while my_timer > 0 and play_game == "" and len(test_list) != 0:
+# start the game
+while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(test_list[0][0])
+    sleep(0.4)
     print("A. {}".format(test_list[0][1]))
+    sleep(0.4)
     print("B. {}".format(test_list[0][2]))
+    sleep(0.4)
     print("C. {}".format(test_list[0][3]))
+    sleep(0.4)
     guess = input("What is your answer?")
+
+    # if the answer is correct
     if guess in correct_answers:
         statement_generator("CORRECT!", "-")
         score += 10
         questions_answered += 1
+
+    # if the answer is incorrect
     else:
-        lives_taken += 1
         statement_generator("INCORRECT!", "-")
+        lives -= 1
         score += 5
     del test_list[0]
     question += 1
     print("=====================================")
 
-if lives_taken == 3:
+# print if all three lives are lost
+if lives == 0:
     print("All Lives Lost. Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
+# print if th timer reaches 0
 elif my_timer == 0:
     print("Time's Up! Game Over")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
+# print if either of the other situations do not happen
 else:
     print("Game Over!")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
-
+statement_generator("Thank you for playing Quiz Blitz!", "*")
