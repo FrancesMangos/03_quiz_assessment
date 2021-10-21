@@ -118,11 +118,13 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["A leech has how many brains?", "32", "42", "52"],
              ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
              ["What does the B stand for in FBI?", "bureau", "business", "bigot"],
-             ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice"]
+             ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice"],
+             ["Ferroequinology is the study of what?", "cars", "trains", "buses"],
+             ["How many states are in Australia?", "4", "5", "6"]
 ]
 
 correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids"
-    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice"]
+    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice", "trains", "6"]
 
 question = 1
 score = 0
