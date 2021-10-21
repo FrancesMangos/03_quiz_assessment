@@ -111,9 +111,11 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
              ["The Resident Evil game franchise has how many games?", "28", "14", "7"],
              ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
-             ["Eden Nash won 75,000 pounds in the British show 'The Chase' against which Chaser?", "governess", "menace", "sinnerman"]]
+             ["A leech has how many brains?", "42", "32", "22"],
+             ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
+]
 
-correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28", "adverb", "menace"]
+correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids", "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s"]
 question = 1
 score = 0
 lives = 3
