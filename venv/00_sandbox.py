@@ -103,7 +103,7 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["Hákarl is the Icelandic delicacy of which fermented meat?", "shark", "dolphin", "whale"],
              ["What is a female giraffe called?", "giraffe", "cow", "doe"],
              ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
-             ["In what year was Marvel's The Avengers released?", "2011", "2013", "2012"],
+             ["In what year was Marvel's The Avengers released?", "2010", "2011", "2012"],
              ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
              ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
              ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
@@ -111,7 +111,7 @@ test_list = [["What is the smallest planet in our solar system?", "mercury", "ve
              ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
              ["The Resident Evil game franchise has how many games?", "28", "14", "7"],
              ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
-             ["A leech has how many brains?", "42", "32", "22"],
+             ["A leech has how many brains?", "32", "42", "52"],
              ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
 ]
 
@@ -147,16 +147,16 @@ random.shuffle(test_list)
 countdown_thread = threading.Thread(target = countdown)
 countdown_thread.start()
 
-while my_timer > 0 and play_game == "" and len(test_list) != 0:
+while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(test_list[0][0])
-    sleep(0.5)
+    sleep(0.4)
     print("A. {}".format(test_list[0][1]))
-    sleep(0.5)
+    sleep(0.4)
     print("B. {}".format(test_list[0][2]))
-    sleep(0.5)
+    sleep(0.4)
     print("C. {}".format(test_list[0][3]))
-    sleep(0.5)
+    sleep(0.4)
     guess = input("What is your answer?")
     if guess in correct_answers:
         statement_generator("CORRECT!", "-")
