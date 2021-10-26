@@ -125,7 +125,7 @@ test_list = [
              ["Australia has how many states?", 4, 5, 6],
              ["How many times does the phrase 'never gonna' repeat in Rick Astley's song 'Never Gonna Give You Up'?", 27, 37, 47],
              ["Axolotls do not develop which organ when metamorphosing into a salamander?", "kidneys", "colon", "lungs"],
-             ["How many items can be obtainable in MineCraft Dungeons?", 264, 302, 176],
+             ["How many items can be obtainable in MineCraft Dungeons?", 264, 364, 464],
              ["D is the roman numeral for which number?", 5000, 50000, 500000],
              ["Which circus prop is the title for a song in the musical 'The Greatest Showman?", "ring", "tightrope", "cannon"],
              ["When was YouTube created?", 2005, 2006, 2007],
