@@ -50,7 +50,7 @@ def want_instructions(question):
 def instructions_and_rules():
     statement_generator("These are the instructions to the game:", "-")
     print()
-    print("You will have 60 seconds to answer as many questions as you can")
+    print("You will have 90 (1 minute, 30 seconds) seconds to answer as many questions as you can")
     print("When a question is displayed, three options will be provided")
     print("You must type the answer you are wanting to submit, not the letter assigned to it")
     print()
@@ -71,14 +71,15 @@ def instructions_and_rules():
     print("SIDE NOTE: Do not move where you are supposed to type")
     print(" This will make it easier to know when time is up because the program will automatically drop it to the next line")
     print()
+    print("=====================================")
 
 
 def countdown():
     global my_timer
 
-    my_timer = 60
+    my_timer = 90
 
-    for x in range(60):
+    for x in range(90):
         my_timer = my_timer - 1
         sleep(1)
 
@@ -101,30 +102,39 @@ def statement_generator(statement, decoration):
 
 
 # main program goes here
-test_list = [["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
+test_list = [
+             ["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
              ["In which country did Lego originate from?", "germany", "denmark", "england"],
              ["What chases the player's character in the game Pacman?", "ghosts", "goblins", "inner demons and self doubt"],
              ["Hákarl is the Icelandic delicacy of which fermented meat?", "shark", "dolphin", "whale"],
              ["What is a female giraffe called?", "giraffe", "cow", "doe"],
              ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
-             ["In what year was Marvel's The Avengers released?", "2010", "2011", "2012"],
+             ["In what year was Marvel's The Avengers released?", 2010, 2011, 2012],
              ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
              ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
              ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
              ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan"],
              ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
-             ["The Resident Evil game franchise has how many games?", "28", "14", "7"],
+             ["The Resident Evil game franchise has how many games?", 28, 14, 7],
              ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
-             ["A leech has how many brains?", "32", "42", "52"],
+             ["A leech has how many brains?", 32, 42, 52],
              ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
              ["What does the B stand for in FBI?", "bureau", "business", "bigot"],
              ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice"],
              ["Ferroequinology is the study of what?", "cars", "trains", "buses"],
-             ["How many states are in Australia?", "4", "5", "6"]
+             ["Australia has how many states?", 4, 5, 6],
+             ["How many times does the phrase 'never gonna' repeat in Rick Astley's song 'Never Gonna Give You Up'?", 27, 37, 47],
+             ["Axolotls do not develop which organ when metamorphosing into a salamander?", "kidneys", "colon", "lungs"],
+             ["How many items can be obtainable in MineCraft Dungeons?", 264, 302, 176],
+             ["D is the roman numeral for which number?", 5000, 50000, 500000],
+             ["Which circus prop is the title for a song in the musical 'The Greatest Showman?", "ring", "tightrope", "cannon"],
+             ["When was YouTube created?", 2005, 2006, 2007],
+             ["A basic meringue is made up of egg whites and what?", "water", "sugar", "salt"]
 ]
 
 correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids"
-    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice", "trains", "6"]
+    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice", "trains"
+    , "6", "37", "lungs", "264", "500000", "tightrope", "2005", "sugar"]
 
 question = 1
 score = 0
@@ -163,13 +173,13 @@ countdown_thread.start()
 while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(test_list[0][0])
-    sleep(0.4)
+    sleep(0.3)
     print("A. {}".format(test_list[0][1]))
-    sleep(0.4)
+    sleep(0.3)
     print("B. {}".format(test_list[0][2]))
-    sleep(0.4)
+    sleep(0.3)
     print("C. {}".format(test_list[0][3]))
-    sleep(0.4)
+    sleep(0.3)
     guess = input("What is your answer?")
 
     # if the answer is correct
@@ -205,4 +215,5 @@ else:
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
+print()
 statement_generator("Thank you for playing Quiz Blitz!", "*")
