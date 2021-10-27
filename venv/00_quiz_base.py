@@ -50,22 +50,27 @@ def want_instructions(question):
 def instructions_and_rules():
     statement_generator("These are the instructions to the game:", "-")
     print()
-    print("You will have 90 (1 minute, 30 seconds) seconds to answer as many questions as you can")
+    print("You will have 120 seconds (2 minutes) to answer as many questions as you can")
     print("When a question is displayed, three options will be provided")
-    print("You must type the answer you are wanting to submit, not the letter assigned to it")
+    print("You must type the answer you are wanting to submit")
+    print("Example:")
+    print("Question 0: Question?")
+    print("Option 1: Que")
+    print("Option 1: St")
+    print("Option 1: Ion")
+    print("What is your answer? Ion")
     print()
-    print("At the beginning of the game you will have three lives")
-    print("If you get an answer correct you will get 10 points, and move on to the next question")
-    print("If you get an answer wrong it will move on to the next question.")
-    print("However you will only get 5 points and 1 life will be deducted.")
+    print("At the beginning of the game you will have 5 lives")
+    print("If you get an answer correct you will get 10 points and move onto the next question")
+    print("If you get an answer wrong you will get 5 points, lose 1 life and move onto the next question")
     print()
     print("At the end of the game these will be displayed:")
-    print("Total Score")
     print("Amount of questions answered correctly")
+    print("Total Score")
     print()
     print("Three different endings will occur depending on your performance")
     print("You lose if the timer reaches 0 and you have not answered all the questions.")
-    print("You lose if you have 0 lives.")
+    print("You lose if you have lost all 5 lives.")
     print("You win if you answer all the questions available with 1 or more lives remaining")
     print()
     print("SIDE NOTE: Do not move where you are supposed to type")
@@ -129,16 +134,20 @@ test_list = [
              ["D is the roman numeral for which number?", 5000, 50000, 500000],
              ["Which circus prop is the title for a song in the musical 'The Greatest Showman?", "ring", "tightrope", "cannon"],
              ["When was YouTube created?", 2005, 2006, 2007],
-             ["A basic meringue is made up of egg whites and what?", "water", "sugar", "salt"]
+             ["A basic meringue is made up of egg whites and what?", "water", "sugar", "salt"],
+             ["National Pikachu Day is on what day of November?", "25th", "26th", "27th"],
+             ["Justin.tv is the parent company of which gaming streaming platform?", "facebook", "youtube", "twitch"],
+             ["How old was Mark Zuckerberg in 2018?", 33, 34, 35]
+
 ]
 
 correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids"
     , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice", "trains"
-    , "6", "37", "lungs", "264", "500000", "tightrope", "2005", "sugar"]
+    , "6", "37th", "lungs", "264", "500000", "tightrope", "2005", "sugar", "25th", "twitch", "35"]
 
 question = 1
 score = 0
-lives = 3
+lives = 5
 questions_answered = 0
 
 # welcome the user to the game, ask them if they have played before
@@ -174,11 +183,11 @@ while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(test_list[0][0])
     sleep(0.3)
-    print("A. {}".format(test_list[0][1]))
+    print("Option 1. {}".format(test_list[0][1]))
     sleep(0.3)
-    print("B. {}".format(test_list[0][2]))
+    print("Option 2. {}".format(test_list[0][2]))
     sleep(0.3)
-    print("C. {}".format(test_list[0][3]))
+    print("Option 3. {}".format(test_list[0][3]))
     sleep(0.3)
     guess = input("What is your answer?")
 
@@ -199,19 +208,19 @@ while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
 
 # print if all three lives are lost
 if lives == 0:
-    print("All Lives Lost. Game Over")
+    print("All Lives Lost. Game Over.")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
 # print if th timer reaches 0
 elif my_timer == 0:
-    print("Time's Up! Game Over")
+    print("Time's Up! Game Over.")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
 # print if either of the other situations do not happen
 else:
-    print("Game Over!")
+    print("Congratulations! You Win!")
     print("You answered {} questions correctly!".format(questions_answered))
     print("Your final score is: {}".format(score))
 
