@@ -24,8 +24,9 @@ while play_game == True and len(test_list) != 0:
     question += 1
     print()
 
-if len(test_list) == 0:
-    print("Game Over")
+play_game = False
 
+if play_game == False:
+    print("Game Over")
 
 

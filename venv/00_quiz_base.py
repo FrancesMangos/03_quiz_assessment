@@ -49,33 +49,20 @@ def want_instructions(question):
 
 def instructions_and_rules():
     statement_generator("These are the instructions to the game:", "-")
+    print("You have to try and answer all the questions in 90 seconds (1 minute and 30 seconds).")
+    print("When a question is displayed you must provide an answer with the three options provided.")
+    print("Answer with the letter assigned to the answer.")
     print()
-    print("You will have 120 seconds (2 minutes) to answer as many questions as you can")
-    print("When a question is displayed, three options will be provided")
-    print("You must type the answer you are wanting to submit")
-    print("Example:")
-    print("Question 0: Question?")
-    print("Option 1: Que")
-    print("Option 1: St")
-    print("Option 1: Ion")
-    print("What is your answer? Ion")
+    print("At the beginning of the game you will have 5 lives.")
+    print("If you get an answer correct you will get 10 points and move onto the next question.")
+    print("If you get an answer wrong you will get 5 points, lose 1 life and move onto the next question.")
     print()
-    print("At the beginning of the game you will have 5 lives")
-    print("If you get an answer correct you will get 10 points and move onto the next question")
-    print("If you get an answer wrong you will get 5 points, lose 1 life and move onto the next question")
+    print("You lose if you lose all 5 lives, or the timer runs out.")
+    print("You win if get through all the questions with at least 1 life remaining and with time remaining.")
     print()
     print("At the end of the game these will be displayed:")
-    print("Amount of questions answered correctly")
-    print("Total Score")
-    print()
-    print("Three different endings will occur depending on your performance")
-    print("You lose if the timer reaches 0 and you have not answered all the questions.")
-    print("You lose if you have lost all 5 lives.")
-    print("You win if you answer all the questions available with 1 or more lives remaining")
-    print()
-    print("SIDE NOTE: Do not move where you are supposed to type")
-    print(" This will make it easier to know when time is up because the program will automatically drop it to the next line")
-    print()
+    print("Amount of questions answered correctly.")
+    print("Total Score.")
     print("=====================================")
 
 
@@ -108,42 +95,39 @@ def statement_generator(statement, decoration):
 
 # main program goes here
 test_list = [
-             ["What is the smallest planet in our solar system?", "mercury", "venus", "earth"],
-             ["In which country did Lego originate from?", "germany", "denmark", "england"],
-             ["What chases the player's character in the game Pacman?", "ghosts", "goblins", "inner demons and self doubt"],
-             ["Hákarl is the Icelandic delicacy of which fermented meat?", "shark", "dolphin", "whale"],
-             ["What is a female giraffe called?", "giraffe", "cow", "doe"],
-             ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths"],
-             ["In what year was Marvel's The Avengers released?", 2010, 2011, 2012],
-             ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids"],
-             ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta"],
-             ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken"],
-             ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan"],
-             ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku"],
-             ["The Resident Evil game franchise has how many games?", 28, 14, 7],
-             ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective"],
-             ["A leech has how many brains?", 32, 42, 52],
-             ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s"],
-             ["What does the B stand for in FBI?", "bureau", "business", "bigot"],
-             ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice"],
-             ["Ferroequinology is the study of what?", "cars", "trains", "buses"],
-             ["Australia has how many states?", 4, 5, 6],
-             ["How many times does the phrase 'never gonna' repeat in Rick Astley's song 'Never Gonna Give You Up'?", 27, 37, 47],
-             ["Axolotls do not develop which organ when metamorphosing into a salamander?", "kidneys", "colon", "lungs"],
-             ["How many items can be obtainable in MineCraft Dungeons?", 264, 364, 464],
-             ["D is the roman numeral for which number?", 5000, 50000, 500000],
-             ["Which circus prop is the title for a song in the musical 'The Greatest Showman?", "ring", "tightrope", "cannon"],
-             ["When was YouTube created?", 2005, 2006, 2007],
-             ["A basic meringue is made up of egg whites and what?", "water", "sugar", "salt"],
-             ["National Pikachu Day is on what day of November?", "25th", "26th", "27th"],
-             ["Justin.tv is the parent company of which gaming streaming platform?", "facebook", "youtube", "twitch"],
-             ["How old was Mark Zuckerberg in 2018?", 33, 34, 35]
+             ["What is the smallest planet in our solar system?", "mercury", "venus", "earth", "a", "A"],
+             ["In which country did Lego originate from?", "germany", "denmark", "england", "b", "B"],
+             ["What chases the player's character in the game Pacman?", "ghosts", "goblins", "inner demons and self doubt", "a", "A"],
+             ["What is a female giraffe called?", "giraffe", "cow", "doe", "b", "B"],
+             ["Ommetaphobia is the fear of what?", "eyes", "noses", "mouths", "a", "A"],
+             ["In what year was Marvel's The Avengers released?", 2010, 2011, 2012, "c", "C"],
+             ["Scorpions are in what animal class?", "insects", "crustaceans", "arachnids", "c", "C"],
+             ["Which one of these are one of the primary colours of light?", "green", "yellow", "magenta", "a", "A"],
+             ["Which of these foods can you cook 'sunny-side-up'?", "steak", "egg", "chicken", "b", "B"],
+             ["Which genus shares its name with a household cooking item?", "oven", "barbeque", "pan", "c", "C"],
+             ["Which apple type shares its name with a famous Asian mountain?", "fuji", "hotaka", "haku", "a", "A"],
+             ["'She worked methodically' is an example of which writing technique?", "verb", "adverb", "adjective", "b", "B"],
+             ["A leech has how many brains?", 32, 42, 52, "a", "A"],
+             ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s", "b", "B"],
+             ["What does the B stand for in FBI?", "bureau", "business", "bigot", "a", "A"],
+             ["A newborn joey's size can be comparable to the size of what?", "marble", "grape", "rice", "c", "C"],
+             ["Ferroequinology is the study of what?", "cars", "trains", "buses", "b", "B"],
+             ["Australia has how many states?", 4, 5, 6, "c", "C"],
+             ["How many times does the phrase 'never gonna' repeat in Rick Astley's song 'Never Gonna Give You Up'?", 27, 37, 47, "b", "B"],
+             ["Axolotls do not develop which organ when metamorphosing into a salamander?", "kidneys", "colon", "lungs", "c", "C"],
+             ["In MineCraft, to make a Potion of Slow Falling is brewed with what ingredient?", "dragon's breath", "chicken feather", "phantom membrane", "c", "C"],
+             ["D is the roman numeral for which number?", 5000, 50000, 500000, "c", "C"],
+             ["Which circus prop is the title for a song in the musical 'The Greatest Showman?", "ring", "tightrope", "cannon", "b", "B"],
+             ["When was YouTube created?", 2005, 2006, 2007, "a", "A"],
+             ["A basic meringue is made up of egg whites and what?", "water", "sugar", "salt", "b", "B"],
+             ["National Pikachu Day is on what day of November?", "25th", "26th", "27th", "b", "B"],
+             ["Justin.tv is the parent company of which gaming streaming platform?", "facebook", "youtube", "twitch", "c", "C"],
+             ["How old was Mark Zuckerberg in 2018?", 33, 34, 35, "c", "C"],
+             ["Jellyfish are what percent of water?", "85%", "90%", "95%", "c", "C"],
+             ["How many countries are under the rule of the British Empire?", 12, 14, 16, "b", "B"],
+             ["What is the Southern most state of America?", "florida", "texas", "orlando", "a", "A"],
 
 ]
-
-correct_answers = ["mercury", "denmark", "ghosts", "shark", "cow", "eyes", "2012", "arachnids"
-    , "green", "egg", "pan", "fuji", "28", "adverb", "32", "1950s", "bureau", "rice", "trains"
-    , "6", "37th", "lungs", "264", "500000", "tightrope", "2005", "sugar", "25th", "twitch", "35"]
 
 question = 1
 score = 0
@@ -158,7 +142,7 @@ print()
 
 # if they say no, ask them if they want to see the instructions
 if played_before == "no":
-    instructions = want_instructions("Do you want to see the instructions?")
+    instructions = want_instructions("Do you want to see the instructions and rules?")
     if instructions == "no":
         print()
     elif instructions == "yes":
@@ -166,7 +150,7 @@ if played_before == "no":
     else:
         print()
 else:
-    print()
+    print("=====================================")
 
 # ask the user to start the game
 play_game = input("Press <Enter> to play")
@@ -183,16 +167,16 @@ while my_timer > 0 and play_game == "" and len(test_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(test_list[0][0])
     sleep(0.3)
-    print("Option 1. {}".format(test_list[0][1]))
+    print("A. {}".format(test_list[0][1]))
     sleep(0.3)
-    print("Option 2. {}".format(test_list[0][2]))
+    print("B. {}".format(test_list[0][2]))
     sleep(0.3)
-    print("Option 3. {}".format(test_list[0][3]))
+    print("C. {}".format(test_list[0][3]))
     sleep(0.3)
     guess = input("What is your answer?")
 
     # if the answer is correct
-    if guess in correct_answers:
+    if guess == test_list[0][4] or guess == test_list[0][5]:
         statement_generator("CORRECT!", "-")
         score += 10
         questions_answered += 1
