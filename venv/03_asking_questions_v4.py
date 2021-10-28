@@ -10,9 +10,9 @@ correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
 
 question = 1
 
+random.shuffle(test_list)
 
-
-while play_game == True:
+while play_game == True and len:
     print("Question {}".format(question))
     print(test_list[0][0])
     print("A. {}".format(test_list[0][1]))
