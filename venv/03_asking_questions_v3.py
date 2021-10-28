@@ -9,7 +9,7 @@ correct_answers = ["netflix", "mercury", "denmark", "ghosts"]
 
 question = 1
 
-while play_game == True:
+while play_game == True and len(test_list) != 0:
     print("Question {}".format(question))
     print(test_list[0][0])
     print("a. {}".format(test_list[0][1]))
@@ -24,8 +24,6 @@ while play_game == True:
     question += 1
     print()
 
-play_game = False
-
-if play_game == False:
+if len(test_list) == 0:
     print("Game Over")
 
