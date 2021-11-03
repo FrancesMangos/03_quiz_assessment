@@ -95,7 +95,7 @@ def statement_generator(statement, decoration):
 
 # main program goes here
 
-# questions in total: 40
+# questions in total: 41
 quiz_list = [
              ["What is the smallest planet in our solar system?", "Mercury", "Venus", "Earth", "a", "A"],
              ["In which country did Lego originate from?", "Germany", "Denmark", "England", "b", "B"],
@@ -136,14 +136,17 @@ quiz_list = [
              ["What is the Southern most state of America?", "Florida", "Texas", "Orlando", "a", "A"],
              ["Rebecca Black's hit song, released in February of 2011, was named after which day of the week?", "Monday", "Wednesday", "Friday", "c", "C"],
              ["Who invented the coding language known as Python?", "Guido van Rossum", "James Gosling", "Brendan Eich", "a", "A"],
-             ["What is the plural for Octopus?", "Octopi", "Octopuses", "Octopodes", "b", "B"],
+             ["What is AirCon short for?", "Air Conditioner", "Air Conditioning", "Air Condition", "b", "B"],
              ["What is the first name of President Snow from 'The Hunger Games'?", "Camellias", "Coriolanus", "Christian", "b", "B"],
 
              ["What is the name of the second book in 'The Maze Runner' series?", "The Scorch Trials", "The Death Cure", "The Fever Code", "b", "B"],
              ["Which Disney princess was created from a different studio?", "Tiana", "Merida", "Meg", "b", "B"],
              ["How many students were in Ms Frizzle's class in the original 'The Magic School Bus'?", 20, 22, 24, "a", "A"],
              ["The study of stars is called what?", "Cosmology", "Astrology", "Astronomy", "c", "C"],
-             ["On the cover of the book 'Wonder' by R.J. Palacio, where is the eye placed?", "On the Right", "In the Middle", "On the Left", "c", "C"]
+             ["On the cover of the book 'Wonder' by R.J. Palacio, where is the eye placed?", "On the Right", "In the Middle", "On the Left", "c", "C"],
+
+             ["What is 9 x (15 - 6 x 2) ÷ 3?", 9, 54, 131, "a", "A"],
+
 
 ]
 
