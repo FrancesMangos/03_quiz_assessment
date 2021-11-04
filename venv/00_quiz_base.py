@@ -129,7 +129,7 @@ quiz_list = [
 
              ["National Pikachu Day is on what day of November?", "25th", "26th", "27th", "b", "B"],
              ["Justin.tv is the parent company of which gaming streaming platform?", "Facebook", "Youtube", "Twitch", "c", "C"],
-             ["How old was Mark Zuckerberg in 2018?", 33, 34, 35, "c", "C"],
+             ["Euphoria is the feeling of what?", "Bloodlust", "Excitement", "Tension", "b", "B"],
              ["Jellyfish are what percent of water?", "85%", "90%", "95%", "c", "C"],
              ["How many countries are under the rule of the British Empire?", 12, 14, 16, "b", "B"],
 
@@ -139,13 +139,14 @@ quiz_list = [
              ["What is AirCon short for?", "Air Conditioner", "Air Conditioning", "Air Condition", "b", "B"],
              ["What is the first name of President Snow from 'The Hunger Games'?", "Camellias", "Coriolanus", "Christian", "b", "B"],
 
-             ["What is the name of the second book in 'The Maze Runner' series?", "The Scorch Trials", "The Death Cure", "The Fever Code", "b", "B"],
+             ["What is the name of the second book in 'The Maze Runner' series?", "The Scorch Trials", "The Death Cure", "The Fever Code", "a", "A"],
              ["Which Disney princess was created from a different studio?", "Tiana", "Merida", "Meg", "b", "B"],
              ["How many students were in Ms Frizzle's class in the original 'The Magic School Bus'?", 20, 22, 24, "a", "A"],
              ["The study of stars is called what?", "Cosmology", "Astrology", "Astronomy", "c", "C"],
              ["On the cover of the book 'Wonder' by R.J. Palacio, where is the eye placed?", "On the Right", "In the Middle", "On the Left", "c", "C"],
 
-             ["What is 9 x (15 - 6 x 2) ÷ 3?", 9, 54, 131, "a", "A"],
+             ["What is the name of the train station in which Hogwarts students go onboard the Hogwarts Express?", "Queen's Cross", "King's Cross", "King's Crocks", "b", "B"],
+             [""]
 
 
 ]
@@ -189,13 +190,13 @@ countdown_thread.start()
 while my_timer > 0 and play_game == "" and len(quiz_list) != 0 and lives > 0:
     print("Question {}".format(question))
     print(quiz_list[0][0])
-    sleep(0.3)
+    sleep(0.25)
     print("A. {}".format(quiz_list[0][1]))
-    sleep(0.3)
+    sleep(0.25)
     print("B. {}".format(quiz_list[0][2]))
-    sleep(0.3)
+    sleep(0.25)
     print("C. {}".format(quiz_list[0][3]))
-    sleep(0.5)
+    sleep(0.25)
     guess = input("What is your answer?")
 
     # if the answer is correct
