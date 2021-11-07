@@ -69,9 +69,9 @@ def instructions_and_rules():
 def countdown():
     global my_timer
 
-    my_timer = 90
+    my_timer = 120
 
-    for x in range(90):
+    for x in range(120):
         my_timer = my_timer - 1
         sleep(1)
 
@@ -95,7 +95,7 @@ def statement_generator(statement, decoration):
 
 # main program goes here
 
-# questions in total: 41
+# questions in total: 44
 quiz_list = [
              ["What is the smallest planet in our solar system?", "Mercury", "Venus", "Earth", "a", "A"],
              ["In which country did Lego originate from?", "Germany", "Denmark", "England", "b", "B"],
@@ -110,7 +110,7 @@ quiz_list = [
              ["Which genus shares its name with a household cooking item?", "Oven", "Barbeque", "Pan", "c", "C"],
 
              ["Which apple type shares its name with a famous Japanese mountain?", "Fuji", "Hotaka", "Haku", "a", "A"],
-             ["'She worked methodically' is an example of which writing technique?", "Verb", "Adverb", "Adjective", "b", "B"],
+             ["The last word in this phrase, 'She worked methodically' is an example of which writing technique?", "Verb", "Adverb", "Adjective", "b", "B"],
              ["A leech has how many brains?", 32, 42, 52, "a", "A"],
              ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s", "b", "B"],
              ["What does the B stand for in FBI?", "Bureau", "Business", "Bigot", "a", "A"],
@@ -145,9 +145,10 @@ quiz_list = [
              ["The study of stars is called what?", "Cosmology", "Astrology", "Astronomy", "c", "C"],
              ["On the cover of the book 'Wonder' by R.J. Palacio, where is the eye placed?", "On the Right", "In the Middle", "On the Left", "c", "C"],
 
-             ["What is the name of the train station in which Hogwarts students go onboard the Hogwarts Express?", "Queen's Cross", "King's Cross", "King's Crocks", "b", "B"],
-             [""]
-
+             ["What is the name of the train station in which Hogwarts students go to board the Hogwarts Express?", "Queen's Cross", "King's Cross", "King's Crocks", "b", "B"],
+             ["In Greek Mythology, staring at what part of Medusa's body turns you to stone?", "Eyes", "Hair", "Mouth", "a", "B"],
+             ["A small, hard deposit that forms in the kidneys that is often painful when passed is called a 'Kidney what?'", "Rock", "Stone", "Pebble", "b", "B"],
+             ["What is the minimum legal age for someone in England to drink alcohol?", 5, 16, 18, "a", "A"]
 
 ]
 
@@ -158,7 +159,7 @@ lives = 5
 questions_answered_correctly = 0
 
 # welcome the user to the game, ask them if they have played before
-statement_generator("Welcome to the Quiz Blitz!", "*")
+statement_generator("Welcome to Quiz Blitz!", "*")
 print("This will test your knowledge and how much you remember from your weird google searches!!! ;]")
 print()
 played_before = yes_no("Have you played before?")
