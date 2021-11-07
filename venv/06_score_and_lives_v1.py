@@ -10,7 +10,7 @@ random.shuffle(test_list)
 
 question = 1
 score = 0
-lives = 3
+lives = 5
 questions_answered = 0
 
 while play_game == True and len(test_list) != 0 and lives > 0:
