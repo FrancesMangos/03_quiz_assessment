@@ -142,6 +142,8 @@ quiz_list = [
              ["In Greek Mythology, staring at what part of Medusa's body turns you to stone?", "Eyes", "Hair", "Mouth", "a", "B"],
 
              ["A small, hard deposit that forms in the kidneys that is often painful when passed is called a 'Kidney what?'", "Rock", "Stone", "Pebble", "b", "B"],
+             ["In what order are the houses belonging to Spongebob, Patrick and Squidward?", "Patrick, Spongebob, Squidward", "Spongebob, Patrick, Squidward", "Patrick, Squidward, Spongebob", "c", "C"],
+             [""]
 
 ]
 
