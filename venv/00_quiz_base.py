@@ -96,7 +96,7 @@ def statement_generator(statement, decoration):
 
 # main program goes here
 
-# questions in total: 36
+# questions in total: 38
 quiz_list = [
              ["What is the smallest planet in our solar system?", "Mercury", "Venus", "Earth", "a", "A"],
              ["In which country did Lego originate from?", "Germany", "Denmark", "England", "b", "B"],
@@ -110,7 +110,7 @@ quiz_list = [
              ["Which apple type shares its name with a famous Japanese mountain?", "Fuji", "Hotaka", "Haku", "a", "A"],
              ["The last word in this phrase, 'She worked methodically' is an example of which writing technique?", "Verb", "Adverb", "Adjective", "b", "B"],
 
-             ["A leech has how many brains?", 32, 42, 52, "a", "A"],
+             ["What is the sum of all the numbers of a six-sided die?", "20", "21", "22", "b", "B"],
              ["McDonald's opened its first restaurant in which decade?", "1960s", "1950s", "1940s", "b", "B"],
              ["What does the B stand for in FBI?", "Bureau", "Business", "Bigot", "a", "A"],
              ["A newborn joey's size can be comparable to the size of what?", "A Marble", "A Grape", "A Grain of Rice", "c", "C"],
@@ -143,7 +143,7 @@ quiz_list = [
 
              ["A small, hard deposit that forms in the kidneys that is often painful when passed is called a 'Kidney what?'", "Rock", "Stone", "Pebble", "b", "B"],
              ["In what order are the houses belonging to Spongebob, Patrick and Squidward?", "Patrick, Spongebob, Squidward", "Spongebob, Patrick, Squidward", "Patrick, Squidward, Spongebob", "c", "C"],
-             [""]
+             ["What kind of instrument is an Organ?", "keyboard", "woodwind", "string", "a", "A"],
 
 ]
 
@@ -151,7 +151,7 @@ quiz_list = [
 question = 1
 score = 0
 lives = 5
-questions_answered_correctly = 0
+questions_answered_correctly = 30
 
 # welcome the user to the game, ask them if they have played before
 statement_generator("Welcome to Quiz Blitz!", "*")
@@ -184,7 +184,7 @@ countdown_thread = threading.Thread(target = countdown)
 countdown_thread.start()
 
 # start the game
-while my_timer > 0 and play_game == "" and len(quiz_list) != 0 and lives > 0:
+while my_timer > 0 and play_game == "" and len(quiz_list) != 0 and lives > 0 and questions_answered_correctly != 0:
     print("Question {}".format(question))
     print(quiz_list[0][0])
     sleep(0.25)
@@ -200,7 +200,7 @@ while my_timer > 0 and play_game == "" and len(quiz_list) != 0 and lives > 0:
     if guess == quiz_list[0][4] or guess == quiz_list[0][5]:
         statement_generator("CORRECT!", "-")
         score += 10
-        questions_answered_correctly += 1
+        questions_answered_correctly -= 1
 
     # if the answer is incorrect
     else:
@@ -223,8 +223,8 @@ elif my_timer == 0:
     print("You answered {} questions correctly!".format(questions_answered_correctly))
     print("Your final score is: {}!".format(score))
 
-# if the user has answered 32 questions CORRECTLY
-elif questions_answered_correctly == 32:
+# if the user has answered 30 questions CORRECTLY
+elif questions_answered_correctly == 0:
     print("Congratulations! You win!")
     print("You answered {} questions correctly!".format(questions_answered_correctly))
     print("Your final score is: {}!".format(score))
@@ -235,4 +235,5 @@ else:
     print("You answered {} questions correctly!".format(questions_answered_correctly))
     print("Your final score is: {}!".format(score))
 print()
-statement_generator("Thank you for playing Quiz Blitz!", "*")
+
+statement_generator("Thank you for playing Quiz Blitz", "*")
